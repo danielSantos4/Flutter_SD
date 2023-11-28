@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "350477443714",
+    "project_id": "teste-bcd67",
+    "storage_bucket": "teste-bcd67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350477443714:android:cbffc37ce81f9aa3df8a9b",
+        "android_client_info": {
+          "package_name": "com.example.aprendendo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5Kt148CV_5qE9iZq_2sD1oUwwVBsCNQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
