@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:trabalhosd/controller/Google_S.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -11,9 +12,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  
+
   String ticket = '';
 
   readQRCode() async {
@@ -24,13 +24,17 @@ class _MyHomePageState extends State<MyHomePage> {
       ScanMode.BARCODE,
     );
     setState(() => ticket = code != '-1' ? code : 'Não validado');
+    if (ticket != '-1') {
+      Google_S requisition = new Google_S();
+      await requisition.addNewDay();
+      await requisition.givePresence(ticket);
+    }
   }
 
-  String toParams() => "?matricula=$ticket"; 
+  String toParams() => "?registro=$ticket";
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -54,8 +58,14 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ElevatedButton.icon(
               onPressed: readQRCode,
-              icon: const Icon(Icons.qr_code, size: 30,),
-              label: const Text('Ler Carteirinha', style: TextStyle(fontSize: 20),),
+              icon: const Icon(
+                Icons.qr_code,
+                size: 30,
+              ),
+              label: const Text(
+                'Ler Carteirinha',
+                style: TextStyle(fontSize: 20),
+              ),
             ),
           ],
         ),
