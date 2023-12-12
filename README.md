@@ -14,8 +14,11 @@ Consiste em um aplicativo de presença, em que o celular vai ler um código de b
 
 ## Arquitetura de Sistema
   Arquitetura de Centralizada Cliente Servidor.
+
   Cliente lê o código de barras.
+
   API recebe a requisição e realiza as modificações no Google Sheets.
+  
   ![Arquitetura de sistema](imagens-readme/arquiteturaSistemas.jpg)
 
 ## Arquitetura de Software
