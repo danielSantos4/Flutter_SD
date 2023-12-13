@@ -23,11 +23,25 @@ class _MyHomePageState extends State<MyHomePage> {
       false,
       ScanMode.BARCODE,
     );
-    setState(() => ticket = code != '-1' ? code : 'Não validado');
+    setState(() => ticket = code.length == 9 ? code : '-1');
     if (ticket != '-1') {
       Google_S requisition = new Google_S();
       await requisition.addNewDay();
       await requisition.givePresence(ticket);
+    }
+  }
+
+  adicionarAluco() async {
+    String code = await FlutterBarcodeScanner.scanBarcode(
+      "#FFFFFF",
+      "Cancelar",
+      false,
+      ScanMode.BARCODE,
+    );
+    setState(() => ticket = code.length == 9 ? code : '-1');
+    if (ticket != '-1') {
+      Google_S requisition = new Google_S();
+      await requisition.addNewStudent(ticket);
     }
   }
 
@@ -63,7 +77,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 size: 30,
               ),
               label: const Text(
-                'Ler Carteirinha',
+                'Dar Presença',
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+            ElevatedButton.icon(
+              onPressed: adicionarAluco,
+              icon: const Icon(
+                Icons.qr_code,
+                size: 30,
+              ),
+              label: const Text(
+                'Adicionar Aluno',
                 style: TextStyle(fontSize: 20),
               ),
             ),
