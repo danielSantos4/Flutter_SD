@@ -22,5 +22,6 @@ Consiste em um aplicativo de presença, em que o celular vai ler um código de b
   ![Arquitetura de sistema](imagens-readme/arquiteturaSistemas.jpg)
 
 ## Arquitetura de Software
+  Em nosso sistema foi utilizado a arquitetura de software MVC (Model, View, Controller)
 
-  
+  ![Arquitetura de software](imagens-readme/arquiteturaSoftware.png)
