@@ -26,6 +26,16 @@ Consiste em um aplicativo de presença, em que o celular vai ler um código de b
 
   ![Arquitetura de software](imagens-readme/arquiteturaSoftware.png)
 
+  ## Instalando flutter
+  A tecnologia Flutter é compatível com múltiplas plataformas, sendo assim é possível instalar em windows, Linux, Mac e ChromeOS.
+  Para instalar basta seguir o tutorial que se encontra em https://docs.flutter.dev/get-started/install e seguir de acordo com seu sistema operacional.
+
+  Lembre-se de executar 
+  ```sh
+  flutter doctor
+```
+  para garantir que todas as dependencias estão instaladas.
+
   ## Tutorial
   - Após a instalação de tudo que é necessário para ter o Flutter em sua máquina e verificação para ver se está tudo certo utilizando o comando flutter doctor, vamos iniciar o nosso tutorial.
     
