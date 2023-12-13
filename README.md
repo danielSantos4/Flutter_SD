@@ -10,19 +10,19 @@ Consiste em um aplicativo de presença, em que o celular vai ler um código de b
 ## Tecnologias utilizadas:
 - Flutter
 - Javascript
+- Apps Script
 - Google Sheets
 
 ## Arquitetura de Sistema
-  Arquitetura de Centralizada Cliente Servidor.
-
-  Cliente lê o código de barras.
-
-  API recebe a requisição e realiza as modificações no Google Sheets.
+  Arquitetura de Centralizada Cliente Servidor. Segundo Andrew S. Tanenbaum, a arquitetura Clitenter-Servidor é caracterizada por um servidor que é um processo que implementa um serviço específico e um cliente que é um processo que realiza as requisições dos serviços de um servidor e espera pela resposta do servidor.
+  
+  Cliente lê o código de barras.  
+  API recebe a requisição e realiza as modificações no Google Sheets.  
   
   ![Arquitetura de sistema](imagens-readme/arquiteturaSistemas.jpg)
 
 ## Arquitetura de Software
-  Em nosso sistema foi utilizado a arquitetura de software MVC (Model, View, Controller)
+  Em nosso sistema foi utilizado a arquitetura de software MVC (Model, View, Controller). O Model representa a camada de dados e a regras de negócios do aplicativo. A View é responsável pela apresentação dos dados ao usuário e pela coleta de informações de entrada. O Controller recebe eventos da View, processa esses eventos e realiza as operações necessárias no Model.
 
   ![Arquitetura de software](imagens-readme/arquiteturaSoftware.png)
 
@@ -58,7 +58,7 @@ Consiste em um aplicativo de presença, em que o celular vai ler um código de b
   ```
   
   
-***3. Setup do projeto***
+***3. Setup do projeto***  
 Vamos realizar o setup do nosso projeto, algumas modificações que iremos fazer no projeto não serão visíveis agora, no entanto, serão importantes para determinar algumas características do nosso projeto. Vamos definir um título para o projeto, desativar o banner de debug para que o projeto fique mais bonito e escolher um tema para o nosso projeto. Além disso, vamos chamar a nossa página principal que será feita posteriormente.
 
 ```sh
