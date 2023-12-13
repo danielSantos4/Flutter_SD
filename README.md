@@ -35,6 +35,16 @@ Consiste em um aplicativo de presença, em que o celular vai ler um código de b
   ```sh
   flutter create tutorial
   ```
+
+  Utilize o comando cd tutorial para entrar no diretório do tutorial e em seguida utilize o comando flutter run para iniciar o projeto em um navegador de internet.
+  ```sh
+  cd tutorial
+
+  flutter run
+  ```
+
+
+    
   ***2. Apague o projeto de exemplo.***  
   Você pode utilizar este projeto para inicializá-lo e testar para ver se está tudo funcionando corretamente. No entanto vamos apagá-lo para fazer o nosso.  
   Para isso deixa o arquivo main.dart apenas com a função void main().
@@ -48,7 +58,9 @@ Consiste em um aplicativo de presença, em que o celular vai ler um código de b
   ```
   
   
-***3. Setup da tela inicial***
+***3. Setup do projeto***
+Vamos realizar o setup do nosso projeto, algumas modificações que iremos fazer no projeto não serão visíveis agora, no entanto, serão importantes para determinar algumas características do nosso projeto. Vamos definir um título para o projeto, desativar o banner de debug para que o projeto fique mais bonito e escolher um tema para o nosso projeto. Além disso, vamos chamar a nossa página principal que será feita posteriormente.
+
 ```sh
 import 'package:flutter/material.dart';
 import 'package:tutorial/view/home_page.dart';
@@ -75,7 +87,8 @@ class MeuAplicativo extends StatelessWidget {
 }
 ```
 
- ***4. Criando a tela inicial***
+ ***4. Criando a tela inicial***  
+ Crie um novo arquivo chamado home_page.dart em uma pasta chamada view dentro da lib. Nesta pasta iremos colocar nossas telas que vamos criar. Neste primeiro momento vamos criar uma tela apenas para demonstrar a facilidade de utilização do Flutter para adicionar informações em uma nova view. 
 ```sh
   import 'package:flutter/material.dart';
   
