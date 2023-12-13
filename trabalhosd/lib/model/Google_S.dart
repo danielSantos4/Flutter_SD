@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 class Google_S {
   final url =
-      "https://script.google.com/macros/s/AKfycbxuNDw5dVkp-AgoSk74PmX_dFgAFBYGPhRuSD8DQ7OcIAHXxsTdcBOf20ZUJAt4SqEF/exec";
+      "https://adicionar.chave.api.com.br";
 
   Future<void> addNewDay() async {
     var func = "addNewDay";
