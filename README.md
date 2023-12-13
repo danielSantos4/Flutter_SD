@@ -106,4 +106,77 @@ class MeuAplicativo extends StatelessWidget {
       );
     }
   }
-```
+  ```
+
+  ***5. Dando vida ao aplicativo***  
+  Nesse momento, já que aprendemos o básico sobre o flutter. É hora de começar a criar componentes que compoem um aplicativo de verdade. Para esse tutorial, iremos criar uma pequena lista de times do futebol brasileiro, para mostrar algumas possibilidades do flutter, como uma lista, uma AppBar e alguns recursos como pegar imagens da internet. Vamos começar criando um modelo para o Time. Crie uma nova pasta chamada Model, dentro de lib, que irá conter nossos modelos de componentes. Dentro de Models, crie um modelo para times:
+  ```sh
+  class Time {
+    String nome;
+    String brasao;
+    int pontos;
+
+    Time ({required this.nome, required this.brasao, required this.pontos});
+  }
+  ```
+
+  ***6. Criando um controlador de times***  
+  Uma vez que nosso modelo Time foi criado, é útil criar um controlador para realizar a construção dos times de nossa tabela, para aumentar a organização do projeto. Porém, como é um tutorial rápido, vamos manter o arquivo dentro de lib. O ideal para projetos é criar uma pasta apenas para controllers. Para esse passo, crie um arquivo home_controller em lib e garanta que ele possua uma lista de times que será inicializada em sua criação:
+  ```sh
+  import 'package:tutorial/models/time.dart';
+
+  class HomeController {
+
+    late List<Time> tabela;
+
+    HomeController() {
+      tabela = [
+        Time(
+          nome: 'Flamengo',
+          brasao: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Flamengo_braz_logo.svg/1200px-Flamengo_braz_logo.svg.png',
+          pontos: 71,
+        ),
+        Time(
+          nome: 'Cruzeiro',
+          brasao: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Cruzeiro_Esporte_Clube_%28logo%29.svg/1200px-Cruzeiro_Esporte_Clube_%28logo%29.svg.png',
+          pontos: 100,
+        )
+      ];
+    }
+  }
+  ```
+  ***7. Adicionando os componentes básicos e nossos modelos na Página Principal***  
+  Para finalizar, vamos construir a página principal. Nosso modelo de time está pronto, assim como nosso controlador que será responsável por inicializar a nossa tabela adequadamente. Nessa etapa, crie componentes básicos como AppBar e um body. É importante que no corpo do aplicativo seja criada uma Lista com características de sua escolha, mas que contenham os nossos modelos de time. Para isso, siga o exemplo do código abaixo:
+  ```sh
+  import 'package:flutter/material.dart';
+  import 'package:tutorial/home_controller.dart';
+
+  class HomePage extends StatelessWidget {
+    HomePage({super.key});
+    var controller = HomeController();
+
+    @override
+    Widget build(BuildContext context) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text('Brasileirao'),
+          centerTitle: true,
+        ),
+        body: ListView.separated(
+          itemCount: controller.tabela.length,
+          itemBuilder: (BuildContext context, int i){
+            final tabela = controller.tabela;
+            // O Item da tabela vai ser construído a partir do ListTile, que é uma estrutura 
+            return ListTile(
+              leading: Image.network(tabela[i].brasao),
+              title: Text(tabela[i].nome),
+              trailing: Text(tabela[i].pontos.toString()),
+            );
+          }, 
+          separatorBuilder: (_, __) => Divider(),
+          padding: EdgeInsets.all(16),
+        ),
+      );
+    }
+  }
+  ```
