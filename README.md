@@ -5,7 +5,7 @@ Consiste em um aplicativo de presença, em que o celular vai ler um código de b
 ## Membros do grupo:
 - Daniel Messias Santos **(202110168)**
 - Luiz Filipe Bartelega Penha **(202111082)**
-- Vitor Pires Zini **(202110189)**
+- Vitor Pires Zini **(202110169)**
 
 ## Tecnologias utilizadas:
 - Flutter
